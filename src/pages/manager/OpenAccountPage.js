@@ -21,7 +21,7 @@ export class OpenAccountPage {
   async selectCurrency(currency) {
     await this.currencySelect.selectOption(currency);
   }
-  
+
   async getSelectedCurrency() {
     const selectedValue = await this.currencySelect.inputValue();
     return selectedValue;

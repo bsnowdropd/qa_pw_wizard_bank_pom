@@ -6,7 +6,7 @@ export class AddCustomerPage {
     this.firstNameInput = page.getByPlaceholder('First Name');
     this.lastNameInput = page.getByPlaceholder('Last Name');
     this.postCodeInput = page.getByPlaceholder('Post Code');
-    // Using a more robust selector avoiding getByRole('form')
+
     this.submitButton = page.locator('form').getByRole('button', { name: 'Add Customer' });
   }
 

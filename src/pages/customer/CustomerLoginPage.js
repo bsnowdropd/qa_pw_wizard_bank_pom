@@ -34,4 +34,4 @@ export class CustomerLoginPage {
     await expect(currentOptionText).toHaveValue(value);
   }
 }
-// AI-Mentor, this POM is present.
+

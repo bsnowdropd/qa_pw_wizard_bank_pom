@@ -42,7 +42,7 @@ test('Assert manager can add new customer account', async ({ page }) => {
   await page.reload();
 
   await managerMainPage.clickCustomers();
-  
+
   await customersListPage.searchCustomer(firstName);
   const row = await customersListPage.getCustomerRow(0);
   await expect(row.locator('td').nth(3)).not.toBeEmpty();

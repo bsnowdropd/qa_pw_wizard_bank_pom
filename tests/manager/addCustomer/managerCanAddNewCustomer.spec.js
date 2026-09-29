@@ -18,16 +18,15 @@ test('Assert manager can add new customer', async ({ page }) => {
   await addCustomerPage.fillLastName(lastName);
   await addCustomerPage.fillPostCode(postCode);
 
-  // Accept dialog popup after adding customer
   page.once('dialog', async dialog => await dialog.accept());
   await addCustomerPage.clickSubmit();
 
   await page.reload();
 
   await managerMainPage.clickCustomers();
-  
+
   const lastRow = await customersListPage.getLastCustomerRow();
-  
+
   await expect(lastRow.locator('td').nth(0)).toHaveText(firstName);
   await expect(lastRow.locator('td').nth(1)).toHaveText(lastName);
   await expect(lastRow.locator('td').nth(2)).toHaveText(postCode);

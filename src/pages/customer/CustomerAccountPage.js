@@ -78,7 +78,7 @@ export class CustomerAccountPage {
   async assertWithdrawNoBalanceErrorMessageIsVisible() {
     await expect(this.withdrawNoBalanceErrorMessage).toBeVisible();
   }
-  
+
   async assertWithdrawSuccessfulMessageIsVisible() {
     await expect(this.withdrawSuccessfulMessage).toBeVisible();
   }

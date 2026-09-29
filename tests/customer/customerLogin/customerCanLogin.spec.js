@@ -10,12 +10,12 @@ test('Assert customer can login', async ({ page }) => {
 
   await bankHomePage.open();
   await bankHomePage.clickCustomerLoginButton();
-  
+
   await customerLoginPage.waitForOpened();
   await customerLoginPage.assertSelectCustomerDropdownIsVisible();
-  
+
   await customerLoginPage.selectCustomer('Harry Potter');
   await customerLoginPage.clickLoginButton();
-  
+
   await expect(accountPage.accountDataLine).toBeVisible();
 });

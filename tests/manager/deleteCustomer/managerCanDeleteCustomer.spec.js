@@ -28,13 +28,13 @@ test('Assert manager can delete customer', async ({ page }) => {
 
   await customersListPage.searchCustomer(firstName);
   await expect(customersListPage.customerRows).toHaveCount(1);
-  
+
   const row = await customersListPage.getCustomerRow(0);
   const deleteBtn = await customersListPage.getDeleteButtonForRow(row);
   await deleteBtn.click();
-  
+
   await expect(customersListPage.customerRows).toHaveCount(0);
-  
+
   await page.reload();
   await customersListPage.searchCustomer(firstName);
   await expect(customersListPage.customerRows).toHaveCount(0);

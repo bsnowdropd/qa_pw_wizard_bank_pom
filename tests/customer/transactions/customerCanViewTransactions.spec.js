@@ -17,19 +17,19 @@ test('Assert customer can view transactions, reset and go back', async ({ page }
   await accountPage.fillAmountInputField('100');
   await accountPage.clickDepositFormButton();
   await accountPage.assertDepositSuccessfulMessageIsVisible();
-  
+
   await accountPage.clickTransactionsButton();
-  
+
   await transactionsPage.assertHeaderIsVisible();
-  await page.waitForTimeout(1000); // Wait for list to populate
-  await transactionsPage.reload(); // Explicitly reload since Angular state sync can be flaky here
+  await page.waitForTimeout(1000); 
+  await transactionsPage.reload(); 
 
   await transactionsPage.assertFirstRowAmountContainsText('100');
   await transactionsPage.clickResetButton();
-  
+
   await page.waitForTimeout(500);
   await transactionsPage.assertFirstRowIsHidden();
-  
+
   await transactionsPage.clickBackButton();
   await expect(accountPage.depositButton).toBeVisible();
 });
