@@ -27,6 +27,7 @@ export class CustomerAccountPage {
       'Transaction Failed. You can not withdraw amount more than the balance.',
     );
     this.logoutButton = page.getByRole('button', { name: 'Logout' });
+    this.withdrawSuccessfulMessage = page.getByText('Transaction successful');
   }
 
   async open() {
@@ -76,5 +77,9 @@ export class CustomerAccountPage {
 
   async assertWithdrawNoBalanceErrorMessageIsVisible() {
     await expect(this.withdrawNoBalanceErrorMessage).toBeVisible();
+  }
+  
+  async assertWithdrawSuccessfulMessageIsVisible() {
+    await expect(this.withdrawSuccessfulMessage).toBeVisible();
   }
 }
