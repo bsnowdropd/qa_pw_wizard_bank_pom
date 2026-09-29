@@ -19,7 +19,7 @@ test('Assert manager can add new customer', async ({ page }) => {
   await addCustomerPage.fillPostCode(postCode);
 
   // Accept dialog popup after adding customer
-  page.once('dialog', dialog => dialog.accept());
+  page.once('dialog', async dialog => await dialog.accept());
   await addCustomerPage.clickSubmit();
 
   await page.reload();
