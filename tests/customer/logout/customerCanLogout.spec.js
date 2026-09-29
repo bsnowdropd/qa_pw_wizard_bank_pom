@@ -28,3 +28,4 @@ test('Assert correct customer Logout', async ({ page }) => {
   await customerLoginPage.assertSelectCustomerDropdownIsVisible();
   await customerLoginPage.assertSelectCustomerDropdownContainsValue('');
 });
+// Included in PR for AI Mentor visibility.
